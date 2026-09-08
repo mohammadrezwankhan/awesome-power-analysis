@@ -40,6 +40,7 @@ Inspired by [Awesome GIS](https://github.com/sshuair/awesome-gis).
 - [LCG Consulting](http://www.energyonline.com/) - Consulting and Software for competitive energy markets.
 
 ## Simulation Tool
+- [Datacenter Twin Lab](https://github.com/mohammadrezwankhan/datacenter-twin-lab) - Python teaching simulator for synthetic data center power continuity, generator failures, battery depletion, and unserved energy accounting, with a local dashboard and reproducible tests.
 - [OpenDSS](http://smartgrid.epri.com/SimulationTool.aspx) - The OpenDSS is a comprehensive electrical power system simulation tool primarly for electric utility power distribution systems. It supports nearly all frequency domain (sinusoidal steady‐state) analyses commonly performed on electric utility power distribution systems. In addition, it supports many new types of analyses that are designed to meet future needs related to smart grid, grid modernization, and renewable energy research. 
 - [OpenDSSDirect](https://github.com/NREL/OpenDSSDirect.py) - OpenDSSDirect.py is a cross-platform Python package implements a "direct" library interface to OpenDSS. 
 - [PowerWorld](https://www.powerworld.com/) - PowerWorld's wide range of products provide the tools needed by transmission planners, power marketers, system operators and trainers, educators, and anyone else desiring access to power system information and analysis in a user-friendly format.
