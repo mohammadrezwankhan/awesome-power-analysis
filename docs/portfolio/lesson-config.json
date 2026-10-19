@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "repository": "mohammadrezwankhan/awesome-power-analysis",
+  "display_name": "Power Analysis · Resource Navigator",
+  "description": "An attributed power-analysis resource fork covering tools, datasets, benchmarks and contribution guidance.",
+  "domain": "DOMAIN_A",
+  "theme": {
+    "accent": "#00E5FF",
+    "secondary": "#00E676",
+    "surface": "#0A192F",
+    "glow": "rgba(0, 229, 255, 0.35)",
+    "label": "Energy systems",
+    "short": "Energy"
+  },
+  "repo_type": "curated-list-fork",
+  "source_revision": "f635828d541cb31c69e88a99a41e35222a776629",
+  "source_snapshot_date": "2026-10-19",
+  "repo_url": "https://github.com/mohammadrezwankhan/awesome-power-analysis",
+  "homepage": "",
+  "upstream": "anderson-optimization/awesome-power-analysis",
+  "lessons": [
+    {
+      "id": "path-01",
+      "title": "Choose the analysis question",
+      "summary": "Use the source categories to distinguish power flow, production cost and microgrid tasks.",
+      "objective": "Find the appropriate class of external tool.",
+      "checkpoint": "The catalogue describes external projects; no solver or simulation is implemented in this two-file repository.",
+      "level": "Foundation",
+      "tags": [
+        "foundations",
+        "contribution"
+      ],
+      "source_paths": [
+        "README.md"
+      ],
+      "source_urls": [
+        "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/f635828d541cb31c69e88a99a41e35222a776629/README.md"
+      ],
+      "parameters": [],
+      "command": null,
+      "native_id": null,
+      "native_route": null,
+      "execution_status": "source-linked guide; no execution by this dashboard"
+    },
+    {
+      "id": "path-02",
+      "title": "Inspect data and benchmark pointers",
+      "summary": "Read the Data and Benchmarks sections.",
+      "objective": "Choose a public case or benchmark suitable for a comparison.",
+      "checkpoint": "Follow the original dataset source and check terms and model assumptions; do not claim benchmark results from this list.",
+      "level": "Foundation",
+      "tags": [
+        "foundations",
+        "contribution",
+        "validation"
+      ],
+      "source_paths": [
+        "README.md"
+      ],
+      "source_urls": [
+        "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/f635828d541cb31c69e88a99a41e35222a776629/README.md"
+      ],
+      "parameters": [],
+      "command": null,
+      "native_id": null,
+      "native_route": null,
+      "execution_status": "source-linked guide; no execution by this dashboard"
+    },
+    {
+      "id": "path-03",
+      "title": "Distinguish modeling languages and solvers",
+      "summary": "Compare Modeling & Optimization with Solvers and Visualization.",
+      "objective": "Separate a modeling interface, numerical solver and result viewer.",
+      "checkpoint": "Record each selected tool role and verify current upstream compatibility before adoption.",
+      "level": "Applied",
+      "tags": [
+        "application",
+        "contribution"
+      ],
+      "source_paths": [
+        "README.md"
+      ],
+      "source_urls": [
+        "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/f635828d541cb31c69e88a99a41e35222a776629/README.md"
+      ],
+      "parameters": [],
+      "command": null,
+      "native_id": null,
+      "native_route": null,
+      "execution_status": "source-linked guide; no execution by this dashboard"
+    },
+    {
+      "id": "path-04",
+      "title": "Prepare a local-list correction",
+      "summary": "Read the real local contribution guide and preserve the upstream relationship.",
+      "objective": "Draft one focused resource update or navigation repair.",
+      "checkpoint": "Use a concise description, avoid duplicates, update the TOC for new sections, and retain anderson-optimization attribution.",
+      "level": "Applied",
+      "tags": [
+        "application",
+        "contribution"
+      ],
+      "source_paths": [
+        "ContributingGuidelines.md",
+        "README.md"
+      ],
+      "source_urls": [
+        "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/f635828d541cb31c69e88a99a41e35222a776629/ContributingGuidelines.md",
+        "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/f635828d541cb31c69e88a99a41e35222a776629/README.md"
+      ],
+      "parameters": [],
+      "command": null,
+      "native_id": null,
+      "native_route": null,
+      "execution_status": "source-linked guide; no execution by this dashboard"
+    }
+  ]
+}

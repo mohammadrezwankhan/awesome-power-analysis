@@ -1,89 +1,302 @@
 {
-  "repository": "awesome-power-analysis",
-  "domain": "DOMAIN_A",
-  "title": "Awesome Power Analysis & Grid Tools",
-  "version": "2.0.0",
-  "author": "Mohammad Rezwan Khan",
-  "lessons": [
+  "$schema": "./lesson-config.schema.json",
+  "schema_version": "1.0",
+  "repository": {
+    "owner": "mohammadrezwankhan",
+    "slug": "awesome-power-analysis",
+    "name": "awesome-power-analysis",
+    "title": "Power Analysis Discovery Lab",
+    "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis",
+    "default_branch": "master",
+    "description": "Choose power-system tools by task: trace energy balances, compare dispatch constraints & plan reproducible grid studies.",
+    "summary": "A forked directory of power-flow, production-cost, microgrid, solver, and data resources. A simple daily balance helps distinguish an energy screen from a network or optimization study.",
+    "audience": "Power-system learners and engineers selecting a solver, dataset, or modeling framework.",
+    "topics": [
+      "power-systems",
+      "power-flow",
+      "optimal-power-flow",
+      "electricity-markets",
+      "energy-modeling",
+      "optimization",
+      "renewable-energy",
+      "grid-planning",
+      "production-cost-modeling",
+      "power-system-analysis",
+      "open-source",
+      "awesome-list",
+      "research-tools",
+      "python",
+      "matlab"
+    ],
+    "source_paths": [
+      "README.md",
+      "ContributingGuidelines.md"
+    ],
+    "is_fork": true,
+    "upstream": "https://github.com/anderson-optimization/awesome-power-analysis"
+  },
+  "domain": {
+    "id": "A",
+    "name": "Energy systems",
+    "primary": "#00E5FF",
+    "secondary": "#00E676",
+    "surface": "#0A192F",
+    "glow": "rgba(0,229,255,0.35)"
+  },
+  "model": {
+    "title": "Method selection · synthetic daily power balance",
+    "timeUnit": "h",
+    "horizon": 24,
+    "parameters": [
+      {
+        "key": "demandKW",
+        "label": "Demand baseline",
+        "unit": "kW",
+        "min": 100,
+        "max": 1200,
+        "step": 25,
+        "default": 500,
+        "calibration": "Illustrative input; verified against the declared analytical model, not field measurements."
+      },
+      {
+        "key": "solarKW",
+        "label": "Solar peak",
+        "unit": "kW",
+        "min": 0,
+        "max": 1400,
+        "step": 25,
+        "default": 600,
+        "calibration": "Illustrative input; verified against the declared analytical model, not field measurements."
+      },
+      {
+        "key": "batteryKW",
+        "label": "Battery discharge",
+        "unit": "kW",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "default": 0,
+        "calibration": "Illustrative input; verified against the declared analytical model, not field measurements."
+      },
+      {
+        "key": "carbonGPerKWh",
+        "label": "Grid carbon factor",
+        "unit": "g/kWh",
+        "min": 0,
+        "max": 800,
+        "step": 25,
+        "default": 400,
+        "calibration": "Illustrative input; verified against the declared analytical model, not field measurements."
+      }
+    ],
+    "metrics": [
+      {
+        "key": "gridImportKW",
+        "label": "Grid import",
+        "unit": "kW",
+        "decimals": 1
+      },
+      {
+        "key": "solarOutputKW",
+        "label": "Solar output",
+        "unit": "kW",
+        "decimals": 1
+      },
+      {
+        "key": "renewablePct",
+        "label": "Solar demand share",
+        "unit": "%",
+        "decimals": 1
+      },
+      {
+        "key": "emissionsKgPerH",
+        "label": "Grid emissions rate",
+        "unit": "kg/h",
+        "decimals": 1
+      }
+    ],
+    "equation": "solar = S · max(0, sin(π(t−6)/12)); demand = D · (0.8 + 0.18 cos(2π(t−19)/24) + 0.12 exp(−((t−19)/3)²)); import = max(demand−solar−battery, 0).",
+    "assumptions": [
+      "An idealized clear-day profile represents one 24-hour period.",
+      "Battery discharge is a fixed external power contribution; energy inventory and charge scheduling are omitted.",
+      "Solar share is capped at 100%; exports are not credited; grid carbon intensity is constant.",
+      "This fork preserves the anderson-optimization/awesome-power-analysis resource list.",
+      "The diagram has no buses, voltage angles, reactive-power equations, line limits, or optimization objective.",
+      "Constant battery discharge is an external assumption; it cannot establish day-long energy adequacy."
+    ],
+    "kind": "grid",
+    "introduction": "Use a one-bus balance to decide what additional method the engineering question needs. No listed power-flow solver, market model, dataset, or network is executed by this page.",
+    "calibration_status": "Uncalibrated synthetic teaching proxy"
+  },
+  "modules": [
     {
-      "id": "L01",
-      "title": "AC Power Flow Solvers & Newton-Raphson Implementations",
-      "level": "Beginner",
-      "duration": "30 mins",
-      "config_file": "indexes/power_flow_engines.json",
-      "summary": "Review PYPOWER, MATPOWER, Pandapower, and PowerModels.jl for bus admittance matrix formulation and nonlinear power flow convergence.",
-      "inputs": [
-        "Standard IEEE 14-bus and 118-bus test cases",
-        "Bus voltage and load matrices"
+      "id": "module-1",
+      "title": "Distinguish power from energy",
+      "objective": "Read an instantaneous power balance and identify which additional time information energy accounting needs.",
+      "minutes": 12,
+      "steps": [
+        "Review the Power Flow, Production Cost Modeling, and Microgrid sections.",
+        "Apply 500 kW demand baseline, 600 kW PV peak, and zero battery contribution.",
+        "Inspect noon and evening; explain why a kW value is not a daily kWh total."
       ],
-      "parameters": {
-        "MaxIterations": 20,
-        "PowerMismatchTolerance_MVA": 1e-05
+      "preset": {
+        "demandKW": 500,
+        "solarKW": 600,
+        "batteryKW": 0,
+        "carbonGPerKWh": 400
       },
       "checkpoints": [
-        "Verify Jacobian matrix condition number",
-        "Compare convergence speed across Python, MATLAB, and Julia"
-      ]
+        {
+          "label": "Solar reaches 600 kW at noon",
+          "metric": "solarOutputKW",
+          "operator": "==",
+          "expected": 600,
+          "tolerance": 0.02,
+          "atTime": 12
+        },
+        {
+          "label": "Evening import reaches 550 kW",
+          "metric": "gridImportKW",
+          "operator": "==",
+          "expected": 550,
+          "tolerance": 0.02,
+          "atTime": 19
+        }
+      ],
+      "reflection": "Which data and equations would a power-flow study need that this single-bus screen omits?",
+      "source_paths": [
+        "README.md"
+      ],
+      "level": "Foundation"
     },
     {
-      "id": "L02",
-      "title": "Optimal Power Flow (OPF) & Security-Constrained Dispatch",
-      "level": "Intermediate",
-      "duration": "45 mins",
-      "config_file": "indexes/opf_scopf_solvers.json",
-      "summary": "Formulate generator cost curve minimization subject to line thermal transmission limits and bus voltage bounds (N-1 security).",
-      "inputs": [
-        "Generator quadratic heat-rate coefficients",
-        "Branch reactance and MVA ratings"
+      "id": "module-2",
+      "title": "Identify the missing inventory constraint",
+      "objective": "Explain how a fixed battery power contribution differs from a storage schedule.",
+      "minutes": 15,
+      "steps": [
+        "Retain the same demand and PV profile.",
+        "Add 100 kW battery discharge and predict the evening import reduction.",
+        "Calculate the energy that six hours of this contribution would require, then find a storage-capable tool category in the list."
       ],
-      "parameters": {
-        "Solver": "IPOPT / HiGHS",
-        "ContingencyCount": 14
+      "preset": {
+        "demandKW": 500,
+        "solarKW": 600,
+        "batteryKW": 100,
+        "carbonGPerKWh": 400
       },
       "checkpoints": [
-        "Identify transmission congestion shadow prices ($/MWh)",
-        "Verify all bus voltages within 0.95 to 1.05 p.u."
-      ]
+        {
+          "label": "Evening import falls to 450 kW",
+          "metric": "gridImportKW",
+          "operator": "==",
+          "expected": 450,
+          "tolerance": 0.02,
+          "atTime": 19
+        },
+        {
+          "label": "Evening solar output is zero",
+          "metric": "solarOutputKW",
+          "operator": "==",
+          "expected": 0,
+          "tolerance": 0.02,
+          "atTime": 19
+        }
+      ],
+      "reflection": "Why is lower grid import insufficient evidence that a battery dispatch is feasible?",
+      "source_paths": [
+        "README.md"
+      ],
+      "level": "Parameter study"
     },
     {
-      "id": "L03",
-      "title": "Production Cost Modeling (PCM) & Long-Term Generation Expansion",
-      "level": "Advanced",
-      "duration": "60 mins",
-      "config_file": "indexes/production_cost_models.json",
-      "summary": "Explore open-source models (Sienna, PyPSA, Switch) for 8760-hour unit commitment, startup/shutdown costs, and renewable curtailment.",
-      "inputs": [
-        "8760-hour hourly load profile",
-        "Renewable generation capacity factors"
+      "id": "module-3",
+      "title": "Choose a method for the stress case",
+      "objective": "Separate demand adequacy, network feasibility, and economic optimization.",
+      "minutes": 15,
+      "steps": [
+        "Increase baseline demand to 800 kW while reducing PV peak to 400 kW.",
+        "Keep the illustrative 100 kW battery contribution and inspect the 19:00 shortfall supplied by the grid.",
+        "Map three questions—line overload, cheapest dispatch, and energy availability—to the directory categories."
       ],
-      "parameters": {
-        "PlanningHorizon_Years": 10,
-        "CarbonTax_USD_ton": 50.0
+      "preset": {
+        "demandKW": 800,
+        "solarKW": 400,
+        "batteryKW": 100,
+        "carbonGPerKWh": 400
       },
       "checkpoints": [
-        "Quantify economic curtailment of solar and wind assets",
-        "Analyze battery storage capacity expansion payback"
-      ]
+        {
+          "label": "Stress-case evening import is 780 kW",
+          "metric": "gridImportKW",
+          "operator": "==",
+          "expected": 780,
+          "tolerance": 0.02,
+          "atTime": 19
+        },
+        {
+          "label": "Associated emissions rate is 312 kg/h",
+          "metric": "emissionsKgPerH",
+          "operator": "==",
+          "expected": 312,
+          "tolerance": 0.02,
+          "atTime": 19
+        }
+      ],
+      "reflection": "Which result would require AC network data, and which could be explored in a single-bus planning model?",
+      "source_paths": [
+        "README.md"
+      ],
+      "level": "Stress test"
     },
     {
-      "id": "L04",
-      "title": "Electromagnetic Transient (EMT) vs. Phasor-Domain Simulators",
-      "level": "Production",
-      "duration": "60 mins",
-      "config_file": "indexes/emt_vs_phasor.json",
-      "summary": "Differentiate transient stability tools (PSSE/PowerWorld equivalents) from microsecond EMT engines (OpenDSS, Simscape Electrical).",
-      "inputs": [
-        "High-penetration inverter-based resource scenario",
-        "Sub-cycle fault inception"
+      "id": "module-4",
+      "title": "Write a tool-and-data study plan",
+      "objective": "State a bounded study question with explicit source, units, and validation requirements.",
+      "minutes": 18,
+      "steps": [
+        "Use 500 kW baseline demand, 300 kW PV, and no battery contribution.",
+        "Compare the noon and evening balance before proposing a solver.",
+        "Read the local contribution guidance and draft a shortlist containing model class, data needs, license, and a reproducible test case."
       ],
-      "parameters": {
-        "EMT_TimeStep_us": 50,
-        "Phasor_TimeStep_ms": 10
+      "preset": {
+        "demandKW": 500,
+        "solarKW": 300,
+        "batteryKW": 0,
+        "carbonGPerKWh": 200
       },
       "checkpoints": [
-        "Identify high-frequency control interactions invisible in phasor domain",
-        "Select optimal simulation toolchain for target engineering project"
-      ]
+        {
+          "label": "Noon grid-import calculation",
+          "metric": "gridImportKW",
+          "operator": "==",
+          "expected": 76.9655,
+          "tolerance": 0.02,
+          "atTime": 12
+        },
+        {
+          "label": "Evening emissions rate is 110 kg/h",
+          "metric": "emissionsKgPerH",
+          "operator": "==",
+          "expected": 110,
+          "tolerance": 0.02,
+          "atTime": 19
+        }
+      ],
+      "reflection": "What would distinguish a transparent screening result from an approved operational dispatch?",
+      "source_paths": [
+        "README.md",
+        "ContributingGuidelines.md"
+      ],
+      "level": "Transfer to source"
     }
-  ]
+  ],
+  "source": {
+    "commit": "f635828d541cb31c69e88a99a41e35222a776629",
+    "audited_at": "2026-10-19T08:39:24Z",
+    "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis/tree/f635828d541cb31c69e88a99a41e35222a776629",
+    "calibration_status": "synthetic-analytical-fixtures",
+    "scope": "This browser lab is a standalone teaching approximation. Use the linked source for the project implementation."
+  },
+  "dashboard_url": "https://mohammadrezwankhan.github.io/awesome-power-analysis/"
 }

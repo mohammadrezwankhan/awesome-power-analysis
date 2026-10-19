@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "repository": {
+    "name": "awesome-power-analysis",
+    "name_with_owner": "mohammadrezwankhan/awesome-power-analysis",
+    "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis"
+  },
+  "native_source": {
+    "commit": "5d7818a85413ea2d37359f96304867f041aa36ce",
+    "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis/tree/5d7818a85413ea2d37359f96304867f041aa36ce",
+    "source_path_override": null
+  },
+  "browser_lab_package_provenance": {
+    "commit": "f635828d541cb31c69e88a99a41e35222a776629",
+    "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis/tree/f635828d541cb31c69e88a99a41e35222a776629",
+    "scope": "This browser lab is a standalone teaching approximation. Use the linked source for the project implementation.",
+    "calibration_status": "synthetic-analytical-fixtures",
+    "config_path": "docs/lesson-config.json"
+  },
+  "native_catalog_source": "Tracked Markdown in source lesson, example, study-case, concept, model, and documentation paths.",
+  "native_material_count": 1,
+  "reproduction_command_count": 0,
+  "materials": [
+    {
+      "id": "doc-8ec9a00bfd09",
+      "title": "Awesome Power Analysis [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/andersonopt/awesome-power-analysis)",
+      "path": "README.md",
+      "line": 1,
+      "source_paths": [
+        "README.md"
+      ],
+      "source_url": "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/f635828d541cb31c69e88a99a41e35222a776629/README.md#L1",
+      "source_revision": "f635828d541cb31c69e88a99a41e35222a776629",
+      "source_kind": "historical-reconciled-readme",
+      "source_label": "Historical README/source guide at f635828d541c",
+      "catalog_url": null,
+      "native_url": null,
+      "excerpt": "Awesome Power Analysis is for collecting power analysis related sources, including power flow, production cost modeling, etc.",
+      "type": "Native overview",
+      "section": "equations",
+      "tags": [
+        "model"
+      ],
+      "track": null,
+      "lesson_id": null,
+      "source_blob_path": "README.md",
+      "source_blob_sha256": "45611ab20a42085c34e81224ee694df86c8c2aab8a7c420f0d4e22e56be3ac0b",
+      "source_blob_retrieval": "git-show",
+      "source_blob_cache": null
+    }
+  ],
+  "commands": [],
+  "engineering_curriculum_exclusions": [],
+  "visuals": {
+    "mapped_diagrams": [],
+    "section_banners": [
+      "section-01-question.svg",
+      "section-02-equations.svg",
+      "section-03-reproduce.svg",
+      "section-04-verification.svg",
+      "section-05-scope.svg"
+    ]
+  },
+  "native_document_banner_insertions": [],
+  "native_document_banner_audit": {
+    "schema_version": 1,
+    "eligibility_rule": "Tracked indexed Markdown in an examples, tutorials, lessons, studies, study-cases, concepts or notes directory, or whose path/title explicitly names a lesson, tutorial, example, walkthrough, study case or study. Banners are based only on existing semantic heading text, never directory names.",
+    "eligible_document_count": 0,
+    "lesson_document_candidates": 0,
+    "modified_document_count": 0,
+    "banner_insertion_count": 0,
+    "audit_gap_count": 0,
+    "banners": [],
+    "audit_gaps": [],
+    "explicit_exclusions": []
+  },
+  "dashboard": {
+    "browser_lab_is_surrogate": true,
+    "native_execution_in_browser": false,
+    "localStorage_or_existing_dashboard_scripts_preserved": true
+  }
+}
