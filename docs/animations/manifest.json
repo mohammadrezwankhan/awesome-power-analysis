@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "repository": "awesome-power-analysis",
+  "preserved_current_commit": "0661933b080db86e8178a66024e5cd761b243762",
+  "animations": [
+    {
+      "kind": "image",
+      "title": "Original floating-layer SVG",
+      "badge": "Earlier animated media",
+      "description": "Floating isometric tiers, pulsing circuits, and flowing dashed traces from the earlier repository hero.",
+      "format": "Animated SVG",
+      "preview": "media/hero-25d-cbf302005ff1.svg",
+      "preview_sha256": "b632fff22a12824172b9ae800a8674551be08049a4d9d29e8e9cb8c91560cc9b",
+      "motion_identity": "cbf302005ff16758600ba48f87605c7f6128d021de4d4865c66fd458b737e649",
+      "sources": [
+        {
+          "path": "assets/hero-25d.svg",
+          "commit": "5d7818a85413ea2d37359f96304867f041aa36ce",
+          "sha256": "f6d6a930449d20ffdf5811c28ccfa50bb2901e90e874f261201e09a006b5b980",
+          "blob": "56382a4d79bd24acbc8c683cbe1d8fb1bb7e198b",
+          "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/5d7818a85413ea2d37359f96304867f041aa36ce/assets/hero-25d.svg"
+        },
+        {
+          "path": "assets/hero-25d.svg",
+          "commit": "cf58a1803a3e6ed48a6cc22a041366d59a278604",
+          "sha256": "6f923a7467ae8195f474598300e49cc6de500b69325283d993f984b73fa47da5",
+          "blob": "c6f8797a4b05df9a53f18dbaca62391a2a7c30e2",
+          "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/cf58a1803a3e6ed48a6cc22a041366d59a278604/assets/hero-25d.svg"
+        }
+      ]
+    },
+    {
+      "kind": "waveform",
+      "title": "Original interactive waveform",
+      "badge": "Previous dashboard animation",
+      "description": "The earlier 2.5D perspective card and its moving waveform, with the original visual formulas and sliders.",
+      "preview": "waveform.html",
+      "preview_sha256": "e7fc33fce4f21eabf7aeb3d15ce828e459b94b8bbc88e585cf0a51a4bbf35d9b",
+      "sources": [
+        {
+          "path": "docs/index.html",
+          "commit": "5d7818a85413ea2d37359f96304867f041aa36ce",
+          "blob": "13ab45f8385a89060babea2ddedb1a915d4323e1",
+          "sha256": "7ec3907e71676edaa0fe43e2a40cb6e77249e7650e156ab986fa09ac2dc784df",
+          "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/5d7818a85413ea2d37359f96304867f041aa36ce/docs/index.html"
+        },
+        {
+          "path": "docs/index.html",
+          "commit": "cf58a1803a3e6ed48a6cc22a041366d59a278604",
+          "blob": "4c67c71ef6161b3ec9245df54eff5d2f2d2d5289",
+          "sha256": "cc96d58297b115fe473ffb3923ce2d4ac85d6f159f1880892278d985b2407ba0",
+          "url": "https://github.com/mohammadrezwankhan/awesome-power-analysis/blob/cf58a1803a3e6ed48a6cc22a041366d59a278604/docs/index.html"
+        }
+      ]
+    }
+  ],
+  "native_links": [],
+  "historical_source_links": []
+}
