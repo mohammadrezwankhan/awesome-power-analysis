@@ -1,0 +1,89 @@
+{
+  "repository": "awesome-power-analysis",
+  "domain": "DOMAIN_A",
+  "title": "Awesome Power Analysis & Grid Tools",
+  "version": "2.0.0",
+  "author": "Mohammad Rezwan Khan",
+  "lessons": [
+    {
+      "id": "L01",
+      "title": "AC Power Flow Solvers & Newton-Raphson Implementations",
+      "level": "Beginner",
+      "duration": "30 mins",
+      "config_file": "indexes/power_flow_engines.json",
+      "summary": "Review PYPOWER, MATPOWER, Pandapower, and PowerModels.jl for bus admittance matrix formulation and nonlinear power flow convergence.",
+      "inputs": [
+        "Standard IEEE 14-bus and 118-bus test cases",
+        "Bus voltage and load matrices"
+      ],
+      "parameters": {
+        "MaxIterations": 20,
+        "PowerMismatchTolerance_MVA": 1e-05
+      },
+      "checkpoints": [
+        "Verify Jacobian matrix condition number",
+        "Compare convergence speed across Python, MATLAB, and Julia"
+      ]
+    },
+    {
+      "id": "L02",
+      "title": "Optimal Power Flow (OPF) & Security-Constrained Dispatch",
+      "level": "Intermediate",
+      "duration": "45 mins",
+      "config_file": "indexes/opf_scopf_solvers.json",
+      "summary": "Formulate generator cost curve minimization subject to line thermal transmission limits and bus voltage bounds (N-1 security).",
+      "inputs": [
+        "Generator quadratic heat-rate coefficients",
+        "Branch reactance and MVA ratings"
+      ],
+      "parameters": {
+        "Solver": "IPOPT / HiGHS",
+        "ContingencyCount": 14
+      },
+      "checkpoints": [
+        "Identify transmission congestion shadow prices ($/MWh)",
+        "Verify all bus voltages within 0.95 to 1.05 p.u."
+      ]
+    },
+    {
+      "id": "L03",
+      "title": "Production Cost Modeling (PCM) & Long-Term Generation Expansion",
+      "level": "Advanced",
+      "duration": "60 mins",
+      "config_file": "indexes/production_cost_models.json",
+      "summary": "Explore open-source models (Sienna, PyPSA, Switch) for 8760-hour unit commitment, startup/shutdown costs, and renewable curtailment.",
+      "inputs": [
+        "8760-hour hourly load profile",
+        "Renewable generation capacity factors"
+      ],
+      "parameters": {
+        "PlanningHorizon_Years": 10,
+        "CarbonTax_USD_ton": 50.0
+      },
+      "checkpoints": [
+        "Quantify economic curtailment of solar and wind assets",
+        "Analyze battery storage capacity expansion payback"
+      ]
+    },
+    {
+      "id": "L04",
+      "title": "Electromagnetic Transient (EMT) vs. Phasor-Domain Simulators",
+      "level": "Production",
+      "duration": "60 mins",
+      "config_file": "indexes/emt_vs_phasor.json",
+      "summary": "Differentiate transient stability tools (PSSE/PowerWorld equivalents) from microsecond EMT engines (OpenDSS, Simscape Electrical).",
+      "inputs": [
+        "High-penetration inverter-based resource scenario",
+        "Sub-cycle fault inception"
+      ],
+      "parameters": {
+        "EMT_TimeStep_us": 50,
+        "Phasor_TimeStep_ms": 10
+      },
+      "checkpoints": [
+        "Identify high-frequency control interactions invisible in phasor domain",
+        "Select optimal simulation toolchain for target engineering project"
+      ]
+    }
+  ]
+}
