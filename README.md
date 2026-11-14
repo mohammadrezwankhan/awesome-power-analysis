@@ -1,4 +1,4 @@
-![Power Analysis Discovery Lab: original vector system illustration](assets/hero-25d.svg)
+![Power Analysis Discovery Lab: original vector system illustration](assets/brand-uniformity/hero-25d.svg)
 
 A forked directory of power-flow, production-cost, microgrid, solver, and data resources. A simple daily balance helps distinguish an energy screen from a network or optimization study.
 
