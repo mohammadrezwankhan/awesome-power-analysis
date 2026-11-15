@@ -85,8 +85,8 @@ Inspired by [Awesome GIS](https://github.com/sshuair/awesome-gis).
 ## Production Cost Modeling
 
 - [PyPSA](https://github.com/PyPSA/PyPSA) - PyPSA stands for "Python for Power System Analysis". It is pronounced "pipes-ah".
-- [Plexos](https://energyexemplar.com/products/plexos-simulation-software/) - Plexos uses mathematical multi-commodity optimization to provide a high-performance, robust simulation system for electric power, water and gas.
-- [AuroraXMP](https://energyexemplar.com/products/aurora-simulation-software/) - Aurora is a comprehensive and reliable electricity price forecasting and analysis tool.
+- [Plexos](https://www.energyexemplar.com/plexos) - Plexos uses mathematical multi-commodity optimization to provide a high-performance, robust simulation system for electric power, water and gas.
+- [AuroraXMP](https://www.energyexemplar.com/aurora) - Aurora is a comprehensive and reliable electricity price forecasting and analysis tool.
 - [Enelytix](http://www.enelytix.com/) - Enelytix integrates a best-in-class power-system simulation engine with data services, scalable and on-demand compute resources and state-of-the-art business analytics tools.  Powered by PSO
 - [PSO](http://psopt.com/pso/) - Polaris' PSO is a production cost market simulator that supports the modeling of multi-level, nested time intervals that simultaneously optimize energy and ancillary services dispatch, and can simulate uncertainties.
 - [LCG Consulting](http://www.energyonline.com/) - Consulting and Software for competitive energy markets.
