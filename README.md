@@ -143,7 +143,7 @@ This benchmark library is curated and maintained by the IEEE PES Task Force on B
 
 ## Groups/Organizations
 
-- [Energy System Modelling](https://www.iai.kit.edu/english/esm.php) The group "Energy System Modelling" researches the most cost-effective pathways to reduce greenhouse gas emissions in the energy system.
+- [Energy System Modelling (KIT, former group)](https://www.iai.kit.edu/english/1619_3828.php) - Tom Brown led this group until 2021 and now heads [Digital Transformation in Energy Systems at TU Berlin](https://www.tu.berlin/en/ensys), which researches cost-effective pathways to reduce greenhouse gas emissions.
 
 ## Misc
 
