@@ -1,5 +1,7 @@
 name: Portfolio guide checks
 on:
+  schedule:
+    - cron: '23 6 * * 1'
   pull_request:
     paths: ['docs/portfolio/**', 'assets/portfolio/**', 'scripts/portfolio/**', '.github/workflows/portfolio-dashboard-check.yml']
   push:
