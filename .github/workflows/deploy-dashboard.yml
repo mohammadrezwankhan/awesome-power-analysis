@@ -4,6 +4,11 @@
 name: Flagship dashboard
 
 on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'assets/**'
+      - '.github/workflows/deploy-dashboard.yml'
   push:
     branches: [master]
     paths:
